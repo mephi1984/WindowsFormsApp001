@@ -17,6 +17,35 @@ namespace WindowsFormsApp001
 
         string lastFilePath = "";
 
+        string[] tasks = {
+            "Напишите программу, которая выводит на экран строку \"Hello world!\"",
+            "Напишите программу, в которую вводится два числа через std::cin. Программа должна вывести на экран сумму этих чисел.",
+            "Напишите программу, в которую вводится число. Программа должна вывести на экран сумму цифр."
+        };
+
+        string[] codeTemplate = {
+            "#include <iostream>\r\n\r\nint main() {\r\nstd::cout << \"Hello world\" << std::endl;\r\n}\r\n",
+            "#include <iostream>\r\n\r\nint main() {\r\nstd::cout << \"Hello world\" << std::endl;\r\n}\r\n",
+            "#include <iostream>\r\n\r\nint main() {\r\nstd::cout << \"Hello world\" << std::endl;\r\n}\r\n"
+        };
+
+        string[] inputArray =
+        {
+            "",
+            "40 40",
+            "1984"
+        };
+
+        string[] outputArray =
+        {
+            "Hello world",
+            "80",
+            "22"
+        };
+
+
+        int currentTask = -1;
+
         public Form1()
         {
             InitializeComponent();
@@ -46,6 +75,52 @@ namespace WindowsFormsApp001
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void testProgram(string executablePath)
+        {
+            ProcessStartInfo processStartInfo = new ProcessStartInfo
+            {
+                FileName = executablePath,
+                RedirectStandardInput = true,  // Перенаправляем стандартный ввод
+                RedirectStandardOutput = true, // Перенаправляем стандартный вывод
+                UseShellExecute = false,      // Не используем оболочку для запуска
+                CreateNoWindow = true         // Не создаем окно для процесса
+            };
+
+            // Создание процесса
+            using (Process process = new Process())
+            {
+                process.StartInfo = processStartInfo;
+                process.Start();
+
+                // Передача строки в поток ввода процесса
+                using (StreamWriter sw = process.StandardInput)
+                {
+                    if (sw.BaseStream.CanWrite)
+                    {
+                        sw.WriteLine(inputArray[currentTask]);
+                    }
+                }
+
+                // Получение строки из потока вывода процесса
+                using (StreamReader sr = process.StandardOutput)
+                {
+                    string result = sr.ReadToEnd().Trim();
+                    if (result == outputArray[currentTask])
+                    {
+                        MessageBox.Show("Задание выполнено успешно!", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Задание выполнено неверно. Вывод не соответствует требованиям.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+
+                process.WaitForExit(); // Ожидание завершения процесса
+            }
         }
 
         private void собратьИЗапуститьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -105,7 +180,14 @@ namespace WindowsFormsApp001
                 {
                     textBox1.AppendText("Сборка завершена\r\n");
                     //MessageBox.Show("Сборка завершена", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Process.Start("\"" + executablePath + "\"");
+                    if (currentTask == -1)
+                    {
+                        Process.Start("\"" + executablePath + "\"");
+                    }
+                    else
+                    {
+                        testProgram(executablePath);
+                    }
                 }
                 else
                 {
@@ -173,6 +255,42 @@ namespace WindowsFormsApp001
                 MessageBoxButtons.OK,                     // Кнопка "OK"
                 MessageBoxIcon.Information               // Иконка информации
             );
+        }
+
+        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void выводТекстаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentTask = 0;
+            textBox2.Text = tasks[currentTask];
+            richTextBox1.Text = codeTemplate[currentTask];
+        }
+
+        private void суммаДвухЧиселToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentTask = 1;
+            textBox2.Text = tasks[currentTask];
+            richTextBox1.Text = codeTemplate[currentTask];
+        }
+
+        private void переворотЧислаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentTask = 2;
+            textBox2.Text = tasks[currentTask];
+            richTextBox1.Text = codeTemplate[currentTask];
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
