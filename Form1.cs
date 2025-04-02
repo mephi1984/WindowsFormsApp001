@@ -20,10 +20,18 @@ namespace WindowsFormsApp001
         string[] tasks = {
             "Напишите программу, которая выводит на экран строку \"Hello world!\"",
             "Напишите программу, в которую вводится два числа через std::cin. Программа должна вывести на экран сумму этих чисел.",
-            "Напишите программу, в которую вводится число. Программа должна вывести на экран сумму цифр."
+            "Напишите программу, в которую вводится число. Программа должна вывести на экран сумму цифр.",
+            "Напишите программу, в которую вводится строка. Программа должна вывести строку наоборот",
+            "Напишите программу, в которую вводится текст. Программа должна вывести тот же текст, но каждое слово перевернуто наоборот",
+            "Напишите программу, в которую вводится три слова. Программа должна вывести эти же три слова, но отсортированные по алфавиту",
+
+
         };
 
         string[] codeTemplate = {
+            "#include <iostream>\r\n\r\nint main() {\r\nstd::cout << \"Hello world\" << std::endl;\r\n}\r\n",
+            "#include <iostream>\r\n\r\nint main() {\r\nstd::cout << \"Hello world\" << std::endl;\r\n}\r\n",
+            "#include <iostream>\r\n\r\nint main() {\r\nstd::cout << \"Hello world\" << std::endl;\r\n}\r\n",
             "#include <iostream>\r\n\r\nint main() {\r\nstd::cout << \"Hello world\" << std::endl;\r\n}\r\n",
             "#include <iostream>\r\n\r\nint main() {\r\nstd::cout << \"Hello world\" << std::endl;\r\n}\r\n",
             "#include <iostream>\r\n\r\nint main() {\r\nstd::cout << \"Hello world\" << std::endl;\r\n}\r\n"
@@ -33,14 +41,20 @@ namespace WindowsFormsApp001
         {
             "",
             "40 40",
-            "1984"
+            "1984",
+            "Hello",
+            "abc def hij",
+            "John Peter Igor"
         };
 
         string[] outputArray =
         {
             "Hello world",
             "80",
-            "22"
+            "22",
+            "olleH",
+            "cba fed jih",
+            "Igor, John Peter"
         };
 
 
@@ -179,7 +193,6 @@ namespace WindowsFormsApp001
                 if (process.ExitCode == 0)
                 {
                     textBox1.AppendText("Сборка завершена\r\n");
-                    //MessageBox.Show("Сборка завершена", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (currentTask == -1)
                     {
                         Process.Start("\"" + executablePath + "\"");
@@ -290,6 +303,30 @@ namespace WindowsFormsApp001
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void словоНаоборотToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentTask = 3;
+            textBox2.Text = tasks[currentTask];
+            richTextBox1.Text = codeTemplate[currentTask];
+
+        }
+
+        private void перевернутьСловаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentTask = 4;
+            textBox2.Text = tasks[currentTask];
+            richTextBox1.Text = codeTemplate[currentTask];
+
+        }
+
+        private void именаПоАлфавитуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentTask = 5;
+            textBox2.Text = tasks[currentTask];
+            richTextBox1.Text = codeTemplate[currentTask];
 
         }
     }

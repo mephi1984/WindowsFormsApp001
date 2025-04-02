@@ -39,17 +39,20 @@
             this.вставитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сборкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.собратьИЗапуститьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.заданияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выводТекстаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.суммаДвухЧиселToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.переворотЧислаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.словоНаоборотToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.перевернутьСловаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.именаПоАлфавитуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -154,6 +157,40 @@
             this.собратьИЗапуститьToolStripMenuItem.Text = "Собрать и запустить";
             this.собратьИЗапуститьToolStripMenuItem.Click += new System.EventHandler(this.собратьИЗапуститьToolStripMenuItem_Click);
             // 
+            // заданияToolStripMenuItem
+            // 
+            this.заданияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.выводТекстаToolStripMenuItem,
+            this.суммаДвухЧиселToolStripMenuItem,
+            this.переворотЧислаToolStripMenuItem,
+            this.словоНаоборотToolStripMenuItem,
+            this.перевернутьСловаToolStripMenuItem,
+            this.именаПоАлфавитуToolStripMenuItem});
+            this.заданияToolStripMenuItem.Name = "заданияToolStripMenuItem";
+            this.заданияToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.заданияToolStripMenuItem.Text = "Задания";
+            // 
+            // выводТекстаToolStripMenuItem
+            // 
+            this.выводТекстаToolStripMenuItem.Name = "выводТекстаToolStripMenuItem";
+            this.выводТекстаToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.выводТекстаToolStripMenuItem.Text = "Вывод текста";
+            this.выводТекстаToolStripMenuItem.Click += new System.EventHandler(this.выводТекстаToolStripMenuItem_Click);
+            // 
+            // суммаДвухЧиселToolStripMenuItem
+            // 
+            this.суммаДвухЧиселToolStripMenuItem.Name = "суммаДвухЧиселToolStripMenuItem";
+            this.суммаДвухЧиселToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.суммаДвухЧиселToolStripMenuItem.Text = "Сумма двух чисел";
+            this.суммаДвухЧиселToolStripMenuItem.Click += new System.EventHandler(this.суммаДвухЧиселToolStripMenuItem_Click);
+            // 
+            // переворотЧислаToolStripMenuItem
+            // 
+            this.переворотЧислаToolStripMenuItem.Name = "переворотЧислаToolStripMenuItem";
+            this.переворотЧислаToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.переворотЧислаToolStripMenuItem.Text = "Сумма цифр числа";
+            this.переворотЧислаToolStripMenuItem.Click += new System.EventHandler(this.переворотЧислаToolStripMenuItem_Click);
+            // 
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -189,28 +226,6 @@
             this.splitContainer1.TabIndex = 1;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(1434, 264);
-            this.textBox1.TabIndex = 0;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1036, 455);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -229,6 +244,17 @@
             this.splitContainer2.SplitterDistance = 1036;
             this.splitContainer2.TabIndex = 1;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(1036, 455);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Control;
@@ -242,36 +268,37 @@
             this.textBox2.TabIndex = 1;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // заданияToolStripMenuItem
+            // textBox1
             // 
-            this.заданияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.выводТекстаToolStripMenuItem,
-            this.суммаДвухЧиселToolStripMenuItem,
-            this.переворотЧислаToolStripMenuItem});
-            this.заданияToolStripMenuItem.Name = "заданияToolStripMenuItem";
-            this.заданияToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
-            this.заданияToolStripMenuItem.Text = "Задания";
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(1434, 264);
+            this.textBox1.TabIndex = 0;
             // 
-            // выводТекстаToolStripMenuItem
+            // словоНаоборотToolStripMenuItem
             // 
-            this.выводТекстаToolStripMenuItem.Name = "выводТекстаToolStripMenuItem";
-            this.выводТекстаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.выводТекстаToolStripMenuItem.Text = "Вывод текста";
-            this.выводТекстаToolStripMenuItem.Click += new System.EventHandler(this.выводТекстаToolStripMenuItem_Click);
+            this.словоНаоборотToolStripMenuItem.Name = "словоНаоборотToolStripMenuItem";
+            this.словоНаоборотToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.словоНаоборотToolStripMenuItem.Text = "Слово наоборот";
+            this.словоНаоборотToolStripMenuItem.Click += new System.EventHandler(this.словоНаоборотToolStripMenuItem_Click);
             // 
-            // суммаДвухЧиселToolStripMenuItem
+            // перевернутьСловаToolStripMenuItem
             // 
-            this.суммаДвухЧиселToolStripMenuItem.Name = "суммаДвухЧиселToolStripMenuItem";
-            this.суммаДвухЧиселToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.суммаДвухЧиселToolStripMenuItem.Text = "Сумма двух чисел";
-            this.суммаДвухЧиселToolStripMenuItem.Click += new System.EventHandler(this.суммаДвухЧиселToolStripMenuItem_Click);
+            this.перевернутьСловаToolStripMenuItem.Name = "перевернутьСловаToolStripMenuItem";
+            this.перевернутьСловаToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.перевернутьСловаToolStripMenuItem.Text = "Перевернуть слова";
+            this.перевернутьСловаToolStripMenuItem.Click += new System.EventHandler(this.перевернутьСловаToolStripMenuItem_Click);
             // 
-            // переворотЧислаToolStripMenuItem
+            // именаПоАлфавитуToolStripMenuItem
             // 
-            this.переворотЧислаToolStripMenuItem.Name = "переворотЧислаToolStripMenuItem";
-            this.переворотЧислаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.переворотЧислаToolStripMenuItem.Text = "Сумма цифр числа";
-            this.переворотЧислаToolStripMenuItem.Click += new System.EventHandler(this.переворотЧислаToolStripMenuItem_Click);
+            this.именаПоАлфавитуToolStripMenuItem.Name = "именаПоАлфавитуToolStripMenuItem";
+            this.именаПоАлфавитуToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.именаПоАлфавитуToolStripMenuItem.Text = "Имена по алфавиту";
+            this.именаПоАлфавитуToolStripMenuItem.Click += new System.EventHandler(this.именаПоАлфавитуToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -325,6 +352,9 @@
         private System.Windows.Forms.ToolStripMenuItem суммаДвухЧиселToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem переворотЧислаToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ToolStripMenuItem словоНаоборотToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem перевернутьСловаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem именаПоАлфавитуToolStripMenuItem;
     }
 }
 
